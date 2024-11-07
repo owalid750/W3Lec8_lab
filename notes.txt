@@ -1,0 +1,7 @@
+in lecture :
+
+- dive in bootstrap5 
+ [display and layout i most important thing in bootstrap]
+
+ - task make last project using bootstrap
+  

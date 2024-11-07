@@ -1,0 +1,420 @@
+body {
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+
+#header {
+    padding: 30px 0;
+}
+
+.logo img {
+    height: 25px;
+    width: 170px;
+}
+
+.burger-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    padding: 8px 10px;
+    background-color: white;
+    cursor: pointer;
+    /* Make it appear clickable */
+}
+
+.links a {
+    text-decoration: none;
+    margin: 20px 20px;
+}
+
+.hero-section {
+    background-image: url('../images/hero3.png');
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    /* Adjust the height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 50%,
+            /* Center position of the gradient */
+            transparent 2%,
+            /* Clear center area */
+            rgba(0, 0, 0, 0.9) 60%
+            /* Dark overlay outside the oval */
+        );
+    z-index: 1;
+    /* Ensures the overlay is above the background but below the text */
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 70px;
+    /* Adjust to move the text up or down */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    /* Ensures text is centered */
+    z-index: 2;
+    /* Ensures the text appears above the overlay */
+}
+
+.card {
+    border: none;
+    position: relative;
+    /* Required for absolute positioning of overlay */
+    overflow: hidden;
+    height: 500px;
+    /* Ensure card takes full height of its container */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Overlay with semi-transparent black */
+    z-index: 1;
+    /* Ensure overlay is above the image */
+}
+
+.card-img {
+    object-fit: cover;
+    height: 75%;
+    /* Set the image to take up 75% of the card's height */
+    width: 100%;
+    z-index: 0;
+    /* Ensure the image is behind the overlay */
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    /* Align text at the bottom of the card */
+    justify-content: center;
+    /* Center text horizontally */
+    z-index: 2;
+    /* Ensure the text appears above the overlay */
+}
+
+.card-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    margin: 0;
+    width: fit-content;
+}
+
+
+.about {
+    background-image: url("../images/about.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Cover the entire container */
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8),
+            transparent 70%);
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Align content at the top */
+    color: white;
+    padding: 20px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ccc;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.read-more {
+    font-size: 16px;
+    color: #f1f1f1;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f1f1;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.portfolio-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.view-portfolio-btn {
+    font-size: 16px;
+    color: rgb(239, 230, 213);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.view-portfolio-btn:hover {
+    color: #0056b3;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.image-wrapper:hover img {
+    filter: grayscale(100%);
+    /* Makes the image gray */
+    transform: scale(1.05);
+    /* Adds a slight zoom effect */
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark overlay */
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.image-wrapper:hover::before {
+    opacity: 1;
+    /* Show the overlay on hover */
+}
+
+.services-section {
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.services-section h4 {
+    font-weight: bold;
+}
+
+.services-section a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.services-section a:hover {
+    text-decoration: underline;
+}
+
+/* Custom styling for testimonial */
+.testimonial-section {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    left: -2px;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-left: 3rem;
+}
+
+.profile {
+    margin-top: 1rem;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    margin-left: 1rem;
+}
+
+.profile-info h6 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.profile-info small {
+    color: #ccc;
+}
+
+
+.contact-section {
+
+    position: relative;
+    background-image: url('../images/cta.png');
+    /* Replace with your image URL */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.contact-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the opacity to make it darker or lighter */
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    /* Ensures content appears above the overlay */
+}
+
+.contact-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-contact {
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+
+.btn-contact:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.footer {
+    /* background-color: #222; */
+    height: 500px;
+    color: #fff;
+    padding: 7rem 0;
+    text-align: center;
+}
+
+.footer img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer .links {
+    margin-bottom: 1rem;
+}
+
+.footer .links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer .links a:hover {
+    color: #ccc;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
